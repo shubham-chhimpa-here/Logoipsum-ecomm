@@ -9,9 +9,9 @@ export default function AllRoutes() {
     
     return <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/products" element={<Products />}/>
-        <Route path="/categories" element={<Categories />}/>
-        <Route path="/categories/:cates" element={<Categories />}/>
         <Route path="/products/:id" element={<ProductDetails />}/>
+        <Route path="/products" element={<Products />}/>
+        <Route path="/categories/:cates" element={<Categories />}/>
+        <Route path="/categories" element={<Categories />}/>
     </Routes>
 }
