@@ -58,9 +58,12 @@ function ProductCard({item}) {
       <Box
         bg={useColorModeValue('white', 'gray.800')}
         maxW="sm"
-        borderWidth="3px"
+        border="3px solid #00000050"
+        _hover={{
+          border:"3px solid black"
+        }}
+
         overflow={'hidden'}
-        border={'1px solid #ddd'}
         padding={'8px'}
         position="relative">
         {isNew && (

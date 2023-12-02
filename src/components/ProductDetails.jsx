@@ -33,7 +33,7 @@ export default function ProductDetails() {
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 18, md: 24 }}>
-        <Flex padding={'1rem'}>
+        <Flex padding={'1rem'} >
           <Image
             rounded={'md'}
             alt={'product image'}
@@ -44,7 +44,7 @@ export default function ProductDetails() {
             h={{ base: '100%', sm: '400px', lg: '500px' }}
           />
         </Flex>
-        <Stack spacing={{ base: 6, md: 10 }}>
+        <Stack spacing={{ base: 6, md: 10 }} >
           <Box as={'header'}>
             <Heading
               lineHeight={1.1}

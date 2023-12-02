@@ -25,6 +25,7 @@ export default function NavDrawer() {
             <HamburgerIcon size="2rem"/>
         </Button>
         <Drawer
+        
         size='full'
           isOpen={isOpen}
           placement='right'
@@ -32,17 +33,19 @@ export default function NavDrawer() {
           finalFocusRef={btnRef}
         >
           <DrawerOverlay />
-          <DrawerContent>
+          <DrawerContent >
             <DrawerCloseButton />
             <DrawerHeader>
-                <Box as='a' href='/'></Box>
+                <Box as='a' href='/' >
+
                 <Logo />
+                </Box>
             </DrawerHeader>
   
             <DrawerBody>
-                <VStack>
+                <VStack paddingTop={'2rem'} gap={'1rem'}>
                     
-                <Box as="a" href="#">CATEGORIES</Box>
+                <Box as="a" href="/categories">CATEGORIES</Box>
                     <Box as="a" href="/products">PRODUCT PAGE</Box>
                 </VStack>
             </DrawerBody>
