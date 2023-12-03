@@ -20,8 +20,8 @@ export default function Navbar() {
                 </Link>
                 
                 <Flex gap={'1rem'} alignItems={'center'} display={{base:'none', md: 'flex'}}>
-                    <Box as="a" href="/categories">CATEGORIES</Box>
-                    <Box as="a" href="/products">PRODUCT PAGE</Box>
+                    <Link to={'/categories'}>CATEGORIES</Link>
+                    <Link to={'/products'}>PRODUCT PAGE</Link>
                     
                     <CartDrawer />
                 </Flex>

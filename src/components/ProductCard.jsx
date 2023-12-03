@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react'
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs'
 import { FiShoppingCart } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 // const data = {
 //   isNew: true,
@@ -46,61 +47,62 @@ function Rating({ rating, numReviews }) {
   )
 }
 
-function ProductCard({item}) {
-    const {img, description, price, isNew, id} = item;
+function ProductCard({ item }) {
+  const { img, description, price, isNew, id } = item;
   return (
-    <Flex  w="full" alignItems="center" justifyContent="center" 
-    as={'a'}
-    href={`/products/${id}`}
-    >
-      <Box
-        bg={useColorModeValue('white', 'gray.800')}
-        maxW="sm"
-        border="3px solid #00000050"
-        _hover={{
-          border:"3px solid black"
-        }}
+    <Link to={`/products/${id}`}>
+      <Flex w="full" alignItems="center" justifyContent="center"
+      >
+        <Box
+          bg={useColorModeValue('white', 'gray.800')}
+          maxW="sm"
+          border="3px solid #00000050"
+          _hover={{
+            border: "3px solid black"
+          }}
 
-        overflow={'hidden'}
-        padding={'8px'}
-        position="relative">
-        {isNew && (
-          <Circle size="10px" position="absolute" top={2} right={2} bg="red.200" />
-        )}
+          overflow={'hidden'}
+          padding={'8px'}
+          position="relative">
+          {isNew && (
+            <Circle size="10px" position="absolute" top={2} right={2} bg="red.200" />
+          )}
 
-        <Image src={img} alt={`Picture of ${description}`}  />
+          <Image src={img} alt={`Picture of ${description}`} />
 
-        <Box p="6">
-          <Box display="flex" alignItems="baseline">
-            {isNew && (
-              <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
-                New
-              </Badge>
-            )}
-          </Box>
-          <Flex mt="1" justifyContent="space-between" alignContent="center">
-            <Box
-              fontSize="lg"
-              fontWeight="semibold"
-              as="h4"
-              lineHeight="tight"
-              isTruncated>
-              {description}
+          <Box p="6">
+            <Box display="flex" alignItems="baseline">
+              {isNew && (
+                <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
+                  New
+                </Badge>
+              )}
             </Box>
-           
-          </Flex>
-
-          <Flex justifyContent="space-between" alignContent="center">
-            <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
-              <Box as="span" color={'gray.600'} fontSize="lg">
-                $
+            <Flex mt="1" justifyContent="space-between" alignContent="center">
+              <Box
+                fontSize="lg"
+                fontWeight="semibold"
+                as="h4"
+                lineHeight="tight"
+                isTruncated>
+                {description}
               </Box>
-              {price.toFixed(2)}
-            </Box>
-          </Flex>
+
+            </Flex>
+
+            <Flex justifyContent="space-between" alignContent="center">
+              <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
+                <Box as="span" color={'gray.600'} fontSize="lg">
+                  $
+                </Box>
+                {price.toFixed(2)}
+              </Box>
+            </Flex>
+          </Box>
         </Box>
-      </Box>
-    </Flex>
+      </Flex>
+    </Link>
+
   )
 }
 
