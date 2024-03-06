@@ -54,7 +54,7 @@ export default function CartDrawer() {
 
           <DrawerBody>
             {
-              cart ? <>
+              cart?.length ? <>
 
                 <VStack paddingBlock={'2rem'} gap={'1rem'}>
                   {
