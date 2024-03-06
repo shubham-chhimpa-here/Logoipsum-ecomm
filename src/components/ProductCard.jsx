@@ -68,7 +68,7 @@ function ProductCard({ item }) {
             <Circle size="10px" position="absolute" top={2} right={2} bg="red.200" />
           )}
 
-          <Image src={img} alt={`Picture of ${description}`} />
+          <Image src={img} loading='lazy' alt={`Picture of ${description}`} />
 
           <Box p="6">
             <Box display="flex" alignItems="baseline">

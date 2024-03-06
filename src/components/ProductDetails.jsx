@@ -19,12 +19,26 @@ import {
 import { MdLocalShipping } from 'react-icons/md'
 import { useParams } from 'react-router-dom';
 import { items } from './AllData';
+import { useContext, useEffect } from 'react';
+import { CartContext } from '../context/CartContext';
 
 export default function ProductDetails() {
+  const {setCart} = useContext(CartContext);
   const {id} = useParams();
   const item = items.find(i => i.id == id)
   const {img, description, price, specs, texture, weight, size} = item;
-  console.log(id)
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0
+    })
+  }, [])
+
+  const handleClick  = (item) => {
+    setCart(cart => {
+      return [...cart , item]
+    })
+  }
   return (
     <Container maxW={'6xl'} py={4}>
       <SimpleGrid
@@ -106,6 +120,9 @@ export default function ProductDetails() {
           </Stack>
 
           <Button
+          onClick={() => {
+            handleClick(item)
+          }}
             rounded={'none'}
             w={'full'}
             mt={8}
